@@ -1,0 +1,94 @@
+{
+	"user": [
+		{
+			"username": "admin",
+			"password": "123456789",
+			"is_superuser": true
+		},
+		{
+			"username": "demo",
+			"password": "demo"
+		}
+	],
+	"sensor": [
+		{
+			"name": "windspeed",
+			"df_name": "WindSpeed-O",
+			"alias": "風速",
+			"unit": "km/h",
+			"icon": "ion-speedometer",
+			"bg_color": "bg-aqua"
+		},
+		{
+			"name": "winddirection",
+			"df_name": "WindDirection-O",
+			"alias": "風向",
+			"unit": "°",
+			"icon": "ion-android-cloud",
+			"bg_color": "bg-aqua"
+		},
+		{
+			"name": "visibility",
+			"df_name": "Visibility-O",
+			"alias": "能見度",
+			"unit": "km",
+			"icon": "ion-eye",
+			"bg_color": "bg-orange"
+		},
+		{
+			"name": "longitude",
+			"df_name": "Longitude-O",
+			"alias": "經度",
+			"unit": "",
+			"icon": "ion-earth",
+			"bg_color": "bg-purple"
+		},
+		{
+			"name": "latitude",
+			"df_name": "Latitude-O",
+			"alias": "緯度",
+			"unit": "",
+			"icon": "ion-earth",
+			"bg_color": "bg-purple"
+		}
+	],
+	"field": [
+		{
+			"name": "demo",
+			"alias": "demo",
+			"sensors": [
+				{
+					"name": "windspeed"
+				},
+				{
+					"name": "winddirection"
+				},
+				{
+					"name": "visibility"
+				},
+				{
+					"name": "longitude"
+				},
+				{
+					"name": "latitude"
+				}
+			]
+		}
+	],
+	"user_access": [
+		{
+			"user": "admin",
+			"accesses": [
+				"demo"
+			],
+			"active": "demo"
+		},
+		{
+			"user": "demo",
+			"accesses": [
+				"demo"
+			],
+			"active": "demo"
+		}
+	]
+}
