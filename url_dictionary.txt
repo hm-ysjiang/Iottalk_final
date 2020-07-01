@@ -615,9 +615,9 @@ https://weather.com/zh-TW/weather/today/l/1a866d17d12582d978a39798bab52b26a1be8d
 中西區, 臺南市
 https://weather.com/zh-TW/weather/today/l/328abab0e8c74c8d356699f63c5b46b1c665859a07d07a84c2e6f9352c9d6b3a
 大溪區, 桃園市
-no_data
+https://weather.com/zh-TW/weather/today/l/f295ef15f2eb88b0842a233e8c7951df8f3a37662ac33955aa89b70e3e9c8b34
 八德區, 桃園市
-no_data
+https://weather.com/zh-TW/weather/today/l/6f35266c6d306eef6055cf881a9277d7911933c3f681690b240ca6caa3a0232f
 中壢區, 桃園市
 https://weather.com/zh-TW/weather/today/l/0005d4c25ae305606e1095778b12d1224780ea0bed47dd95e90983daf35cac1e
 桃園區, 桃園市
