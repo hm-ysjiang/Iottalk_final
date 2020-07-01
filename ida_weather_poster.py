@@ -3,6 +3,8 @@ import requests as req
 from bs4 import BeautifulSoup as Soup
 from uuid import _random_getnode as getnode
 from iottalkpy.dan import NoData
+import IOT_destination
+import IOT_GPS 
 
 api_url = 'https://iottalk2.tw/csm'
 
@@ -25,15 +27,40 @@ odf_list = ['Dummy_Control']
 push_interval = 1  # global interval
 interval = {}
 
-# The destination location @weather.com
-_url = 'https://weather.com/zh-TW/weather/today/l/7ceb69e37a100e138b92e592f2bd6619cfa4626f7315d0877b5061494e83bb77'  # Hsinchu
+# construct a dictionary of chinese name and url
+url_dict = {}
+with open(r"C:\Users\alan8\test543\project\url_dictionary.txt","r") as f:
+    while True:
+        name = f.readline()
+        url  = f.readline()
+        if not name or not url: break
+        name = name.replace('\n','')
+        url_dict[name] = url
 
+# Point out the destination on the map of Taiwan , output format [lng,lat]
+def select_destination():
+    return IOT_destination.destination()
+
+# Change longitude and latitude to chinese name
+def convert_to_name(longitude=120.999686 , latitude=24.7851415):
+    return IOT_GPS.your_location(longitude,latitude)
+
+# The destination location @weather.com
+def weather_url(location):
+    try : 
+        return url_dict[location]
+    except:
+        print('Location does not exist!')
 
 def on_register():
     print('register successfully')
 
 
 def Dummy_Sensor():
+    coordinate = select_destination()
+    location = convert_to_name(coordinate[0],coordinate[1])
+    _url = weather_url(location)
+    
     r = req.get(_url)
     if r.ok:
         soup = Soup(r.text, 'html.parser')
