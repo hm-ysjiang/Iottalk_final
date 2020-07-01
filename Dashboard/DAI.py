@@ -27,7 +27,8 @@ def _run(profile, reg_addr, field, field_id, alert_range={}):
                         print(e, ', ignore this data.')
                         continue
 
-                    new_model = getattr(db.models, df.replace('-O', ''))(timestamp=timestamp, field=field_id, value=value)
+                    new_model = getattr(db.models, df.replace(
+                        '-O', ''))(timestamp=timestamp, field=field_id, value=value)
                     session.add(new_model)
                     session.commit()
 
@@ -52,6 +53,7 @@ def _run(profile, reg_addr, field, field_id, alert_range={}):
         finally:
             session.close()
 
+
 def main():
     db.connect()
     threads = []
@@ -59,8 +61,8 @@ def main():
     session = db.get_session()
 
     for field in (session.query(db.models.field).all()):
-        profile = {'d_name': '0716214_DataServer',
-                   'dm_name': 'DataServer',
+        profile = {'d_name': '214-fin-Server',
+                   'dm_name': 'PlaneTrafficServer',
                    'df_list': ['Alert-I'],
                    'is_sim': False}
         alert_range = {}
@@ -91,6 +93,7 @@ def main():
 
     for thread in threads:
         thread.join()
+
 
 if __name__ == "__main__":
     main()
