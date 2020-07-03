@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="./index.js"></script>
+    <style>
+        .sql-data {
+            background-color: #dee1e6;
+            height: 40vw;
+            width: 40vw;
+            padding: 5vw;
+            text-align: center;
+            border-radius: 2rem;
+            margin: 15;
+            font-family: Microsoft JhengHei;
+            font-size: 60;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="position: relative; text-align: center; margin-top: 50;">
+        <div style="display: inline-flex;">
+            <div class="sql-data">
+                <div style="margin-bottom: 12vw;">風速風向</div>
+                <span id="sql-wind"></span>
+                <span>km/h</span>
+                <img id="sql-windir" src="windir.png" style="transform: rotate(90deg);">
+            </div>
+            <div class="sql-data">
+                <div style="margin-bottom: 12vw;">能見度</div>
+                <span id="sql-visibility"></span>
+                <span>km</span>
+            </div>
+        </div>
+        <hr>
+        <div style="text-align: left; padding: 0 85;">
+            <div class="btn-group" role="group"
+                style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                <div class="btn btn-secondary" disabled style="cursor: default; font-size: 48;">Server></div>
+                <div class="btn btn-light" disabled style="cursor: default;">
+                    <span id="server-msg" style="font-size: 48;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
