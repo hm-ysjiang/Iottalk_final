@@ -1,5 +1,5 @@
 //使用 WebSocket 的網址向 Server 開啟連結
-let ws = new WebSocket('ws://140.113.123.205:3000')
+let ws = new WebSocket('ws://localhost:3000')
 
 ws.onopen = () => {
     console.log('open connection')
